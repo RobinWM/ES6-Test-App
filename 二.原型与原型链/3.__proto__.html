@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function Student(name) {
+    this.name = name;
+    this.hello = function () {
+      console.log('Hello, ' + this.name + '!');
+    };
+  }
+
+  Student.prototype.task = function () {
+    console.log('学生的任务就是学习');
+  };
+  Student.prototype.hobby = 'enjoy';
+
+  let xiaoming = new Student('小明');                               // Hello, 小明!
+  console.log(xiaoming.__proto__);                                 // hobby: "enjoy" task: ƒ ()
+  console.log(xiaoming.__proto__ === Student.prototype);           // true
+</script>
+</body>
+</html>
