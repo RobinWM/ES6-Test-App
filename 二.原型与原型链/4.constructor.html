@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
+
 <body>
-<script>
-  function Animal(name) {
-    this.name = name;
-    this.sound = function () {
-      console.log(this.name + '叫了好几声');
-    };
-  }
+  <script>
+    function Animal(name) {
+      this.name = name;
+      this.sound = function () {
+        console.log(this.name + '叫了好几声');
+      };
+    }
 
-  Animal.prototype.age = 2;
+    Animal.prototype.age = 2;
 
-  let dog = new Animal('da_huang');
-  console.log(dog.constructor);                 // f Animal(name){}
-</script>
+    let dog = new Animal('da_huang');
+    console.log(Animal.constructor);
+
+    const People = new Function();
+    console.log(People.__proto__===Function.prototype);
+  </script>
 </body>
+
 </html>

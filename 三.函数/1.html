@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+function Faicso(){
+  getName=function() {console.log("凡科快图");};
+  return this
+}
+Faicso.getName = function() {console.log("凡科微传图");};
+Faicso.prototype.getName = function() {console.log("凡科建站");};
+var getName = function () {
+  console.log("凡科互动");
+};
+function getName() {
+  console.log("凡科商城");
+}
+Faicso.getName();
+getName();
+Faicso().getName();
+getName();
+new Faicso.getName();
+new Faicso().getName();
+new new Faicso().getName();
+</script>
+</body>
+</html>

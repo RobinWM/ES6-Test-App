@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <style>
+    h3 {
+      color: red;
+    }
+  </style>
 </head>
+
 <body>
+  <h3>__proto__、prototype、constructor三者的区别<h3>
+      <ul>
+        <li>1.prototype是函数特有的一个属性,它是一个对象,一般叫做原型对象；</li>
+        <li>2.constructor表示生成该对象的构造函数，其中</li>
+        <ul>
+          <li>1.普通对象的构造函数是Object();</li>
+          <li>2.函数是特殊的对象，函数的构造函数是Function()</li>
+        </ul>
+        <li>3.__proto__指向其构造函数的原型对象;</li>
+      </ul>
+</body>
 <script>
   let me = {
     name: 'Robin',
@@ -13,9 +30,15 @@
     }
   };
 
-  console.log(me.prototype);
-  console.log(me.constructor);
-  console.log(me.__proto__);
+  function Test(name) {
+    this.name = name
+  }
+
+  let test1 = new Test('test1');
+
+  console.log(test1.__proto__);
+  console.log(test1.constructor);
+  console.log(Test.prototype);
 </script>
-</body>
+
 </html>
